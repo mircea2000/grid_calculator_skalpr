@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Input Display</title>
+        <!-- Compiled and minified CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="manifest" href="manifest.json" />
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body class="black-text">
+        <div class="containerFull">
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#!" class="brand-logo center-align"
+                            ><span>{</span> Grid <span>%</span> Calc
+                            <span>}</span></a
+                        >
+                        <!-- <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Sass</a></li>
+                        <li><a href="badges.html">Components</a></li>
+                    </ul> -->
+                    </div>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <label for="lowNumberInput" class="white-text"
+                        >Enter Low Number</label
+                    >
+                    <input
+                        class="white-text"
+                        type="number"
+                        id="lowNumberInput"
+                        autofocus
+                        placeholder="Enter your number..."
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <label for="stepIncreaseNumberInput" class="white-text"
+                        >Step Increment</label
+                    >
+                    <input
+                        placeholder="Number of steps: 1,2,n ..."
+                        class="white-text"
+                        type="number"
+                        class="black-text"
+                        id="stepIncreaseNumberInput"
+                    />
+                </div>
+                <div class="col s6">
+                    <label for="feesCost" class="white-text">Fees Cost</label>
+                    <input
+                        placeholder="Exchange Fess Cost %..."
+                        class="white-text"
+                        type="number"
+                        class="black-text"
+                        id="feesCost"
+                        value="0.0950"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <label for="highNumberInput" class="white-text"
+                        >High Number</label
+                    >
+                    <input
+                        class="white-text"
+                        type="number"
+                        id="highNumberInput"
+                    />
+                </div>
+                <div class="col s6">
+                    <label for="tradeAmount" class="white-text" val="1"
+                        >Amount per Trade</label
+                    >
+                    <input class="white-text" type="number" id="tradeAmount" />
+                </div>
+            </div>
+            <div class="row">
+                <div id="percentResultTable" class="col s12 center-align"></div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button id="myButton">Get grid percentages</button>
+                </div>
+            </div>
+        </div>
+        <div id="percentResult" class="center-align"></div>
+        <script src="./app.js" defer></script>
+        <script src="./service-worker.js"></script>
+    </body>
+</html>

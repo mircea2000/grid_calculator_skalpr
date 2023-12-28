@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Binance US Open Orders</title>
+    </head>
+    <body>
+        <h1>WebSocket Example</h1>
+        <div id="priceUpdate"></div>
+
+        <script>
+            // Replace with your actual Binance US symbol (e.g., 'btcusdt')
+            const symbol = "dgbusdt";
+
+            // WebSocket endpoint for Binance US
+            const socketEndpoint = `wss://stream.binance.us:9443/ws/${symbol}@trade`;
+
+            const socket = new WebSocket(socketEndpoint);
+
+            socket.onopen = (event) => {
+                console.log("WebSocket opened:", event);
+            };
+
+            socket.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                console.log("WebSocket message:", data);
+
+                // Display the latest trade price on the page
+                const priceUpdateElement =
+                    document.getElementById("priceUpdate");
+                priceUpdateElement.textContent = `Latest Trade Price: ${data.p}`;
+            };
+
+            socket.onclose = (event) => {
+                console.log("WebSocket closed:", event);
+            };
+
+            socket.onerror = (error) => {
+                console.error("WebSocket error:", error);
+            };
+        </script>
+    </body>
+</html>
